@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <p class="display-4 text-center">Sign Up</p>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <img class="mt-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS86CI5KrtimDHUz3QK6D_vWzSxYelJVOmpNkJ3r61D_hAt2eRf&usqp=CAU" >
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <form [formGroup]="userform" (submit)="formSubmit(userform.value)">
+                        <label class="mt-4">Name</label>
+                        <input class="form-control" formControlName="name">
+
+                        <label class="mt-4">Username</label>
+                        <input class="form-control" formControlName="username">
+
+                        <label class="mt-4">Email</label>
+                        <input class="form-control" formControlName="Email">
+
+                        <label class="mt-4">Password</label>
+                        <input class="form-control" type="password" formControlName="password">
+
+                        <button class="btn btn-primary mt-5">Sign Me Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

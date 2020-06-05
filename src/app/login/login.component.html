@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <p class="display-4 text-center">Sign In</p>
+                    <hr>
+                    <form [formGroup]="loginform" (submit)="formSubmit(loginform.value)">
+        
+                        <label class="mt-4">Username</label>
+                        <input class="form-control" formControlName="username">
+        
+                        <label class="mt-4">Password</label>
+                        <input class="form-control" type="password" formControlName="password">
+        
+                        <button class="btn btn-primary mt-5">Sign Me Up</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

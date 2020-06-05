@@ -1,0 +1,29 @@
+<div class="container">
+    <p class="text-center display-4">Manage Users</p>
+
+    <ul class="list-group" *ngFor="let user of users">
+        <li class="list-group-item">{{user.name}}</li>
+        <li class="list-group-item">{{user.username}}</li>
+    </ul>
+
+
+    <table class="table table-dark mt-5">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

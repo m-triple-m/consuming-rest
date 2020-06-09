@@ -42,6 +42,10 @@
                             <mat-error>Age required</mat-error>
                         </mat-form-field>
 
+                        <input type="file" (change)="uploadImage($event)">
+
+                        <img [src]="imgURL" *ngIf="imgURL">
+
                         <div class="col">
                             <button mat-raised-button color="primary" class="btn-block mt-5">Sign Me Up</button>
                         </div>

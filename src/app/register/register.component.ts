@@ -11,6 +11,8 @@ export class RegisterComponent implements OnInit {
 
   userform;
   users;
+  avatar;
+  imgURL;
 
   constructor(private fb: FormBuilder, private userservice: UserService) { }
 
@@ -42,6 +44,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    formdata.avatar = this.avatar;
     console.log(formdata);
     this.userservice.addUser(formdata).subscribe((data) => {
       console.log(data);
@@ -63,6 +66,43 @@ export class RegisterComponent implements OnInit {
   getEmail(){
     if(this.userform.controls.errors){
       return this.userform.controls.errors.email;
+    }
+  }
+
+
+  uploadImage(event)
+  {
+    let files = event.target.files;
+    if(files.length===0)
+      return;
+ 
+    var mimeType=files[0].type;
+    if(mimeType.match(/image\/*/)==null)
+    { 
+      // Swal.fire("Images Only");
+      return;
+    }
+    this.preview(event.target.files)
+    let formData=new FormData();
+    let selectedFile=files[0];
+
+    this.avatar = selectedFile.name;
+
+    formData.append('image',  selectedFile,  selectedFile.name);
+
+    this.userservice.uploadImage(formData).subscribe(response=>{
+      console.log(response);
+
+    })
+
+  }
+ 
+  preview(files) {
+ 
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result;
     }
   }
 

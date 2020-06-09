@@ -35,6 +35,17 @@ export class LoginComponent implements OnInit {
         if(data['password'] == formdata['password']){
           console.log('login success!!');
           this.userservice.loggedin = true;
+
+
+          // sessionStorage.setItem('username', formdata.username);
+          sessionStorage.setItem('user', JSON.stringify(data));
+
+          // Swal.fire({
+          //   icon : 'success',
+          //   title : 'Success',
+          //   text : 'Successfully logged in !!'
+          // })
+
           this.router.navigate(['/mnguser']);
         }
       }

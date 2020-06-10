@@ -1,3 +1,14 @@
 <div class="container-fluid">
-    
+    <div class="row">
+        <div class="col-3 side-panel">
+            <p class="text-center h3">Welcome User</p>
+            <hr>
+
+            <button mat-raised-button class="btn-lg btn-block">Manage Users</button>
+            <button mat-raised-button class="btn-lg btn-block">Update Profile</button>
+        </div>
+        <div class="col-8 main-panel">
+            <app-manageusers [userdata]="currentUser"></app-manageusers>
+        </div>
+    </div>
 </div>

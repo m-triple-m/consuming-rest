@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../user.service';
 import { FormBuilder } from '@angular/forms';
 
@@ -10,17 +10,17 @@ import { FormBuilder } from '@angular/forms';
 export class ManageusersComponent implements OnInit {
 
   users;
-  currentUser;
+
   showeditform = false;
   editform;
+
+  @Input('userdata') currentUser;
+  @Output('num') clicked = new EventEmitter<any>();
 
   constructor(private userservice: UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-
-    // this.currentUser = sessionStorage.getItem('username');
-    this.currentUser = JSON.parse(sessionStorage.getItem('user'));
-
+    console.log(this.currentUser);
     this.getUsers();
   }
 

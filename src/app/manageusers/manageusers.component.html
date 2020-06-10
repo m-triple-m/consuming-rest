@@ -2,6 +2,8 @@
     <!-- <p class="h4">Currently logged in : {{currentUser.username}}</p> -->
     <p class="text-center display-4">Manage Users</p>
 
+    {{currentUser.name}}
+
     <ul class="list-group" *ngFor="let user of users">
         <li class="list-group-item">{{user.name}}</li>
         <li class="list-group-item">{{user.username}}</li>

@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           //   text : 'Successfully logged in !!'
           // })
 
-          this.router.navigate(['/mnguser']);
+          this.router.navigate(['/userdash']);
         }
       }
 

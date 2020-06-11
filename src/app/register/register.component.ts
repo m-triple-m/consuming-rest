@@ -33,8 +33,22 @@ export class RegisterComponent implements OnInit {
       username : ['', Validators.required],
       email : ['', [Validators.email, Validators.required]],
       password : ['', [Validators.minLength(5), Validators.required]],
+      confirm : '',
       age : ['', Validators.required],
-    })
+    }, {validator : this.matchPassword('password', 'confirm')})
+  }
+
+  matchPassword(password, confirm){
+    return (form) => {
+      let control1 = form.controls[password];
+      let control2 = form.controls[confirm];
+
+      if(control1.value !== control2.value){
+        control2.setErrors({match : true})
+      }else{
+        control2.setErrors(null);
+      }
+    }
   }
 
   formSubmit(formdata){
@@ -55,18 +69,6 @@ export class RegisterComponent implements OnInit {
     this.userservice.getAllUsers().subscribe( data => {
       console.log(data);
     })
-  }
-
-  getRequired(){
-    if(this.userform.controls.errors){
-      return this.userform.controls.errors.required;
-    }
-  }
-
-  getEmail(){
-    if(this.userform.controls.errors){
-      return this.userform.controls.errors.email;
-    }
   }
 
 

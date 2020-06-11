@@ -8,7 +8,7 @@
             <button mat-raised-button class="btn-lg btn-block">Update Profile</button>
         </div>
         <div class="col-8 main-panel">
-            <app-manageusers [userdata]="currentUser"></app-manageusers>
+            <app-manageusers [userdata]="currentUser" (num)="handleEvent($event)"></app-manageusers>
         </div>
     </div>
 </div>

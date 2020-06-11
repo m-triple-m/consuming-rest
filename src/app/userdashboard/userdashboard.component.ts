@@ -17,4 +17,8 @@ export class UserdashboardComponent implements OnInit {
     console.log(this.currentUser);
   }
 
+  handleEvent(timesclicked){
+    console.log(timesclicked); 
+  }
+
 }

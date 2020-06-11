@@ -13,6 +13,7 @@ export class ManageusersComponent implements OnInit {
 
   showeditform = false;
   editform;
+  timesclicked = 0;
 
   @Input('userdata') currentUser;
   @Output('num') clicked = new EventEmitter<any>();
@@ -59,6 +60,11 @@ export class ManageusersComponent implements OnInit {
   updateUser(user){
     this.showeditform = true;
     this.initUser(user);
+  }
+
+  handleClick(){
+    this.timesclicked+=1;
+    this.clicked.emit(this.timesclicked);
   }
 
 }

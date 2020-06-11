@@ -27,7 +27,8 @@
                         <mat-form-field appearance="outline" class="col-6">
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="Leon@mail.com" formControlName="email">
-                            <mat-error>Email required</mat-error>
+                            <mat-error *ngIf="getRequired('email')">Email required</mat-error>
+                            <mat-error *ngIf="getValid('email')">Email Invalid</mat-error>
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="col-6">

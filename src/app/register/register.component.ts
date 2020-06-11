@@ -108,4 +108,26 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  getRequired(controlname){
+    if(this.userform.controls[controlname].errors){
+      return this.userform.controls[controlname].errors.required;
+    }
+    return false;
+  }
+
+  getValid(controlname){
+    if(this.userform.controls[controlname].errors){
+      return this.userform.controls[controlname].errors.email;
+    }
+    return false;
+  }
+
+  getminLength(controlname){
+    if(this.userform.controls[controlname].errors){
+      return this.userform.controls[controlname].errors.minLength;
+    }
+    return false;
+  }
+
+
 }

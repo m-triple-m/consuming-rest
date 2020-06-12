@@ -25,7 +25,7 @@ export class SocketService {
       this.socket.on('rec_that', (data) => {
         observer.next(data);
       })
-    } )
+    })
   }
 
 }

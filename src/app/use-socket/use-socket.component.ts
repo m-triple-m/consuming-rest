@@ -12,6 +12,12 @@ export class UseSocketComponent implements OnInit {
   constructor(private socket: SocketService) { }
 
   ngOnInit(): void {
-    
+    this.socket.recData().subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  sendMessage(msg){
+    this.socket.sendData({message : msg});
   }
 }

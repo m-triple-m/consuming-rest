@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { UseSocketComponent } from './use-socket/use-socket.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     ManageusersComponent,
     LoginComponent,
     HeaderComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    UseSocketComponent
   ],
   imports: [
     BrowserModule,

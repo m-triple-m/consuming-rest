@@ -1,2 +1,13 @@
-<input class="form-control" #msg>
-<button mat-raised-button (click)="sendMessage(msg.value)">Send Message</button>
+<div class="container">
+    <mat-card>
+        <div class="card-body">
+            <div class="chat-area">
+                <p class="msg-area" *ngFor="let msg of messages" [class]="msg.sent?'sent':'rec'">
+                    {{msg.message}}
+                </p>
+            </div>
+        </div>
+    </mat-card>
+    <input class="form-control" #msg>
+    <button mat-raised-button (click)="sendMessage(msg.value)">Send Message</button>
+</div>

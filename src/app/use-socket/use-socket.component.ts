@@ -8,16 +8,18 @@ import { SocketService } from '../socket.service';
 })
 export class UseSocketComponent implements OnInit {
 
- 
+  messages = [];
   constructor(private socket: SocketService) { }
 
   ngOnInit(): void {
     this.socket.recData().subscribe(data => {
       console.log(data);
+      this.messages.push(data);
     })
   }
 
   sendMessage(msg){
+    this.messages.push({message : msg, sent : true});
     this.socket.sendData({message : msg});
   }
 }

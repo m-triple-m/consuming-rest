@@ -4,11 +4,52 @@
             <p class="text-center h3">Welcome User</p>
             <hr>
 
-            <button mat-raised-button class="btn-lg btn-block">Manage Users</button>
-            <button mat-raised-button class="btn-lg btn-block">Update Profile</button>
+            <button mat-raised-button (click)="toggleManageUser()" class="btn-lg btn-block">Manage Users</button>
+            <button mat-raised-button (click)="toggleEditForm()" class="btn-lg btn-block">Update Profile</button>
         </div>
         <div class="col-8 main-panel">
-            <app-manageusers [userdata]="currentUser" (num)="handleEvent($event)"></app-manageusers>
+            <app-manageusers *ngIf="showmanageuser"  [userdata]="currentUser" (num)="handleEvent($event)"></app-manageusers>
+
+            <mat-card class="mt-5" *ngIf="showeditform">
+                <mat-card-content>
+                    <form [formGroup]="editform" (ngSubmit)="formSubmit(editform.value)">
+            
+                        <mat-form-field appearance="outline" class="col">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Leon Kennedy" formControlName="name">
+                            <mat-error>Name required</mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="col-6">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="Leon" formControlName="username">
+                            <mat-error>Username required</mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="col-6">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Leon@mail.com" formControlName="email">
+                            <mat-error>Email required</mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="col-6">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="*********" formControlName="password" type="password">
+                            <mat-error>Password required</mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="col-6">
+                            <mat-label>Age</mat-label>
+                            <input matInput placeholder="50" formControlName="age">
+                            <mat-error>Age required</mat-error>
+                        </mat-form-field>
+            
+                        <div class="col">
+                            <button mat-raised-button color="primary" class="btn-block mt-5">Sign Me Up</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
         </div>
     </div>
 </div>

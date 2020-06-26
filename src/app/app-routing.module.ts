@@ -5,6 +5,7 @@ import { ManageusersComponent } from './manageusers/manageusers.component';
 import { LoginComponent } from './login/login.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UseSocketComponent } from './use-socket/use-socket.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path : 'mnguser', component : ManageusersComponent},
   { path : 'login', component : LoginComponent},
   { path : 'userdash', component : UserdashboardComponent},
-  { path : 'socket', component : UseSocketComponent}
+  { path : 'socket', component : UseSocketComponent},
+  { path : 'forgot', component : ForgotPasswordComponent},
 ];
 
 @NgModule({

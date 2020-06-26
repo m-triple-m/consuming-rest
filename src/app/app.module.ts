@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UseSocketComponent } from './use-socket/use-socket.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UseSocketComponent } from './use-socket/use-socket.component';
     LoginComponent,
     HeaderComponent,
     UserdashboardComponent,
-    UseSocketComponent
+    UseSocketComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
